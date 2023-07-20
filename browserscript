@@ -1,24 +1,25 @@
 // ==UserScript==
-// @name         r/Place RubberRoss Newgrounds Overlay
-// @namespace    https://github.com/stevebel/rPlaceOverlay
+// @name         r/Place Black MIDI Place Overlay
+// @namespace    https://github.com/6gh/rPlaceOverlay
 // @version      1.0.0
-// @description  R/Place Newgrounds Overlay by RubberRoss community
+// @description  R/Place Black MIDI Overlay by Danidanijr
 // @author       stevebel
-// @match        https://hot-potato.reddit.com/embed*
+// @author       6gh
+// @match        https://garlic-bread.reddit.com/embed*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @grant        none
 // @license      GPL-3.0
 // ==/UserScript==
 if (window.top !== window.self) {
     window.addEventListener('load', () => {
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-canvas")[0].shadowRoot.children[0].appendChild(
-            (function () {
-                const i = document.createElement("img");
-                i.src = "https://github.com/Stevebel/rPlaceOverlay/raw/main/place-overlay.png";
-                i.style = "position: absolute;image-rendering: pixelated;width: 50px;height: 50px;";
-                i.style.top = 1898 + 'px';
-                i.style.left = 879 + 'px';
-                return i;
-            })())
+        document.getElementsByTagName("garlic-bread-embed")[0].shadowRoot.querySelectorAll("garlic-bread-canvas")[0].shadowRoot.children[0].appendChild(
+        (function () {
+            const i = document.createElement("img");
+            i.src = "https://github.com/6gh/rPlaceOverlay/raw/main/place-overlay.png";
+            i.style = "position: absolute;image-rendering: pixelated;width: 42px;height: 20px;z-index: 100;";
+            i.style.top = 171 + 'px';
+            i.style.left = 312 + 'px';
+            return i;
+        })())
     }, false);
 }
